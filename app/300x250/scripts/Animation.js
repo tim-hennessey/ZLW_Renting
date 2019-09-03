@@ -57,7 +57,7 @@ app.Animation = (function () {
 		.from(cta, .5, {scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
 
 		tl2.to(flag, 0.1, {display: "block"})
-		.to(sprite, 1, {x: -481, ease: SteppedEase.config(13)});
+		.to(sprite, 1, {x: -851, ease: SteppedEase.config(23)}, "+=.25");
 		
 	}
 
