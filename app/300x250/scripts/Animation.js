@@ -15,6 +15,7 @@ app.Animation = (function () {
 	
 	var cta = document.getElementById('cta');
 	var curtain = document.getElementById('curtain');
+	var container = document.getElementsByClassName("container");
 	
 
 	// --------------------------------------------------------------------------------------
@@ -23,6 +24,7 @@ app.Animation = (function () {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
 		t.set(cta, {transformOrigin: "50% 70%"});
+		t.set(container, {transformOrigin: "50% 50%"});
 	}
 
 	// --------------------------------------------------------------------------------------
@@ -32,15 +34,15 @@ app.Animation = (function () {
 		tl1.to(txt1a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt1b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(txt1a, .5, {opacity: 0}, "+=2")
+		.to(txt1a, .5, {opacity: 0}, "+=1.5")
 		.to(txt1b, .5, {opacity: 0}, "-=.5")
 
 		.to(txt2a, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 		.to(txt2b, .5, {y:"+=10", opacity: 1, ease: Sine.easeInOut})
 
-		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=2")
+		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
 
-		.from(house, .5, {opacity: 0, ease: Sine.easeInOut})
+		.from(container, .5, {scale:0, opacity: 0, ease: Sine.easeInOut})
 
 		.from(z, .5, {x: "-=10", opacity: 0, ease: Sine.easeInOut}, "-=.3")
 		.from(i, .5, {x: "-=10", opacity: 0, ease: Sine.easeInOut}, "-=.3")
@@ -52,7 +54,10 @@ app.Animation = (function () {
 		.from(tagline, 1, {y: "-=10", ease: Sine.easeInOut}, "-=1")
 		.from(tagline, .8, {opacity: 0}, "-=.8")
 
-		.from(cta, 1, {scale: 0, opacity: 0, ease: Elastic.easeInOut}, "-=.25");
+		.from(cta, .5, {scale: 0, opacity: 0, ease: Sine.easeInOut}, "-=.25");
+
+		tl2.to(flag, 0.1, {display: "block"})
+		.to(sprite, 1, {x: -481, ease: SteppedEase.config(13)});
 		
 	}
 
