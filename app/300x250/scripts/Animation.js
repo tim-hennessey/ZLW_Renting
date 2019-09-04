@@ -16,6 +16,7 @@ app.Animation = (function () {
 	var cta = document.getElementById('cta');
 	var curtain = document.getElementById('curtain');
 	var container = document.getElementsByClassName("container");
+	var resolve = document.getElementsByClassName("resolve");
 	
 
 	// --------------------------------------------------------------------------------------
@@ -43,6 +44,8 @@ app.Animation = (function () {
 		.to(curtain, .75, {opacity: 1, onComplete: function () {tl2.play();}}, "+=1.5")
 
 		.from(container, .5, {scale:0, opacity: 0, ease: Sine.easeInOut})
+
+		.set(resolve, {display: "block"})
 
 		.from(z, .5, {x: "-=10", opacity: 0, ease: Sine.easeInOut}, "-=.3")
 		.from(i, .5, {x: "-=10", opacity: 0, ease: Sine.easeInOut}, "-=.3")
