@@ -31,7 +31,7 @@ body {
 
     .txt {
         top: -10px;
-        left: 0;
+        left: 15px;
         opacity:0;
         position: absolute;
     }
@@ -56,12 +56,12 @@ body {
     }
 
     .container {
-        width: 31px;
-        height:34px;
+        width: 62px;
+        height:68px;
         overflow: hidden;
         position: absolute;
-        left: 35px;
-        top: 27px;
+        left: 22px;
+        top: 10px;
     }
 
     #button-exit {
